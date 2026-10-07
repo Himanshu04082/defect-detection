@@ -1,0 +1,43 @@
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Dataset (large, not uploaded to GitHub)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Model weights (large files)
+models/*
+!models/.gitkeep
+*.pt
+*.pth
+*.onnx
+
+# Training outputs
+runs/
+
+# Database file (local data)
+database/*
+!database/.gitkeep
+
+# Generated reports
+reports/exports/*
+!reports/exports/.gitkeep
+
+# Secrets
+.env
+*.key
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
