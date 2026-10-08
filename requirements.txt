@@ -1,0 +1,15 @@
+# Core libraries
+numpy==2.5.3
+pandas==3.0.6
+matplotlib==3.11.2
+opencv-python==5.0.0.93
+streamlit==1.65.0
+pillow==12.3.0
+
+# YOLO (installs its own compatible dependencies)
+ultralytics==8.4.174
+
+# NOTE: PyTorch is NOT pinned here on purpose.
+# Local (CPU, Windows):
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+# Google Colab: PyTorch with GPU comes pre-installed.
