@@ -15,6 +15,10 @@ data/processed/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 
+# YOLO-format dataset (generated; license of source is unknown)
+data/yolo/images/
+data/yolo/labels/
+
 # Model weights (large files)
 models/*
 !models/.gitkeep
