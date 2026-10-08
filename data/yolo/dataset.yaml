@@ -1,0 +1,8 @@
+path: data/yolo
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: inclusion
+  1: scratches
+  2: rolled-in_scale
