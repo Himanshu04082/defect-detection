@@ -1,0 +1,34 @@
+# Project configuration. Keep values here, not hardcoded in code.
+project:
+  seed: 42
+
+data:
+  yolo_dir: data/yolo
+  dataset_yaml: data/yolo/dataset.yaml
+  classes: [inclusion, scratches, rolled-in_scale]   # ids 0, 1, 2
+
+preprocessing:
+  imgsz: 640            # frozen primary (416 only as documented fallback)
+  denoise: false        # frozen: skipped (no evidence of noise problem)
+  clahe: false          # frozen: skipped, possible later ablation
+
+augmentation:           # frozen: conservative, grayscale-aware
+  hsv_h: 0.0            # grayscale: hue has no meaning
+  hsv_s: 0.0            # grayscale: saturation has no meaning
+  hsv_v: 0.4            # brightness variation seen across images
+  translate: 0.1
+  scale: 0.5
+  shear: 0.0
+  perspective: 0.0
+  flipud: 0.0           # frozen: vertical flip OFF
+  fliplr: 0.5           # frozen: horizontal flip ON
+  degrees: 0.0          # frozen: rotation OFF
+  mosaic: 1.0
+  close_mosaic: 10
+  mixup: 0.0
+  cutmix: 0.0
+  copy_paste: 0.0
+  erasing: 0.0          # conservative: do not erase small defects
+
+inference:
+  conf_threshold: 0.25  # PLACEHOLDER: T is tuned on val set in Phase 8
