@@ -30,6 +30,7 @@ models/*
 
 # Training outputs
 runs/
+runs_colab/
 
 # Database file (local data)
 database/*
