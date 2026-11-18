@@ -18,3 +18,8 @@
 - All VAL images are defective: false-positive rate / Good accuracy cannot be measured.
 - Image-level threshold analysis uses seed-42 weights only; multi-seed variability was
   assessed on validation metrics, not on image-level threshold analysis.
+## Threshold rule (frozen before the analysis)
+- Strict image-level recall: at least one detection with the same class and IoU >= 0.5 against a ground-truth box.
+- Target: recall >= 0.95 (at least 137 of 144 val images); T grid 0.05 to 0.95, step 0.05, same for both models.
+- Choose the highest T meeting the target; fallback T = 0.05 if none does.
+- Decision-rule recall (any detection with conf >= T) is reported as a sanity check only.
