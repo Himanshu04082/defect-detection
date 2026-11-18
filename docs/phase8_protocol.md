@@ -23,3 +23,18 @@
 - Target: recall >= 0.95 (at least 137 of 144 val images); T grid 0.05 to 0.95, step 0.05, same for both models.
 - Choose the highest T meeting the target; fallback T = 0.05 if none does.
 - Decision-rule recall (any detection with conf >= T) is reported as a sanity check only.
+
+## FINAL DECISION (frozen before any test-set evaluation)
+- Selected model: YOLOv8n, weights models/final_v8n_best.pt (seed 42, 50 epochs).
+- Confidence threshold: T = 0.15.
+- Basis (validation set only):
+  - Strict image-level recall at T = 0.15: v8n 137/144, v8s 138/144 (difference of 1 image).
+  - rolled-in_scale box recall, 3-seed mean: v8n 0.533, v8s 0.503.
+  - mAP50, 3-seed mean: v8n 0.816, v8s 0.802; mAP50-95: 0.440 vs 0.439.
+  - CPU latency (laptop, batch 1, imgsz 640): v8n about 129-133 ms, v8s about 298-349 ms.
+  - Tie rule applied: v8n is smaller and faster; this is a practical selection rule, not a statistical test.
+- Known caveats: v8s had higher inclusion box recall (mean 0.829 vs 0.788, not a selection criterion);
+  T = 0.15 meets the 0.95 target for v8n with exactly 137 images; false-alarm behaviour is unmeasured
+  because all validation and test images are defective.
+- Test set: not used for any decision above. It will be evaluated once with this model and T.
+- Weights SHA256: 94A2E409EDC19B4DE670423614F66C70DE41CAC1696D1FBFD0C89A55DF18FEAF
