@@ -38,3 +38,13 @@
   because all validation and test images are defective.
 - Test set: not used for any decision above. It will be evaluated once with this model and T.
 - Weights SHA256: 94A2E409EDC19B4DE670423614F66C70DE41CAC1696D1FBFD0C89A55DF18FEAF
+
+## TEST RESULT (single evaluation, frozen model YOLOv8n, T = 0.15)
+- Weights SHA256 matched the frozen value. 180 test images, 403 ground-truth boxes.
+- Image-level strict recall (same class, IoU >= 0.5): 171/180 = 0.950 (frozen target >= 171; met with zero margin).
+  Decision-rule recall (any detection >= T): 180/180 = 1.000.
+- Missed images (9): inclusion_282; rolled-in_scale_249, 252, 254, 258, 262, 268, 269, 286.
+- Box-level (Ultralytics val, test split): P 0.681, R 0.667, mAP50 0.729, mAP50-95 0.363.
+  Per-class mAP50: inclusion 0.816, scratches 0.832, rolled-in_scale 0.541.
+- Box-level at T = 0.15: TP 324, FP 430, FN 79 (precision 0.430, recall 0.804 over all classes).
+- The test set was not used to change the model or T. It is now spent for this experiment.
