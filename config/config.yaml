@@ -46,3 +46,8 @@ training:               # frozen (Phase 6, Step 6): same for YOLOv8n and YOLOv8s
   seed: 42
   models: [yolov8n, yolov8s]
   data_note: "train 575 / val 144 / test 180 (test is never used in training)"
+
+  
+database:
+  path: database/inspections.db
+  uploads_dir: database/uploads
