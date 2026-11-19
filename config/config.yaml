@@ -31,7 +31,11 @@ augmentation:           # frozen: conservative, grayscale-aware
   erasing: 0.0          # conservative: do not erase small defects
 
 inference:
-  conf_threshold: 0.25  # PLACEHOLDER: T is tuned on val set in Phase 8
+  model_path: models/final_v8n_best.pt
+  model_name: yolov8n
+  model_version: seed42-50ep
+  conf_threshold: 0.15   # FROZEN in Phase 8 (chosen on val for recall; false alarms unmeasured)
+  device: cpu
 
 
 training:               # frozen (Phase 6, Step 6): same for YOLOv8n and YOLOv8s
