@@ -9,5 +9,6 @@ pages = [
     st.Page("views/home.py", title="Home", default=True),
     st.Page("views/single_inspection.py", title="Single Inspection"),
     st.Page("views/batch_inspection.py", title="Batch Inspection"),
+    st.Page("views/history.py", title="Inspection History"),
 ]
 st.navigation(pages).run()
