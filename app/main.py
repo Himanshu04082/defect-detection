@@ -11,5 +11,6 @@ pages = [
     st.Page("views/batch_inspection.py", title="Batch Inspection"),
     st.Page("views/history.py", title="Inspection History"),
     st.Page("views/analytics.py", title="Quality Analytics"),
+    st.Page("views/model_performance.py", title="Model Performance"),
 ]
 st.navigation(pages).run()
