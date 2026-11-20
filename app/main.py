@@ -8,5 +8,6 @@ st.set_page_config(page_title="AI Defect Detection", layout="wide")
 pages = [
     st.Page("views/home.py", title="Home", default=True),
     st.Page("views/single_inspection.py", title="Single Inspection"),
+    st.Page("views/batch_inspection.py", title="Batch Inspection"),
 ]
 st.navigation(pages).run()
